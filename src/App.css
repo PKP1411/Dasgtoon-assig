@@ -1,38 +1,158 @@
+/* Common styles for all views */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+}
+
 .App {
   text-align: center;
+  margin: 20px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.label-input-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.label-input-container div {
+  flex-basis: calc(100% - 10px);
+  margin-top: 10px;
+}
+
+.label-input-container label {
+  display: block;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.label-input-container input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  margin: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: #4CAF50;
   color: white;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
 }
 
-.App-link {
-  color: #61dafb;
+button:hover {
+  background-color: #45a049;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.loading {
+  margin-top: 10px;
+}
+
+.error {
+  color: red;
+  margin-top: 10px;
+}
+
+.image-container {
+  position: relative;
+  display: inline-block;
+  margin: 10px;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.image-container img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.image-container img:hover {
+  transform: scale(1.05);
+}
+
+.annotation {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 8px;
+  border-radius: 8px;
+  font-size: 14px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-width: 80%;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.annotation:hover {
+  background-color: #4CAF50;
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive styles for different screen sizes */
+
+/* Tablet view */
+@media (max-width: 991px) {
+  .label-input-container input {
+    width: calc(30% - 10px);
   }
-  to {
-    transform: rotate(360deg);
-  }
+}
+
+ @media (max-width: 767px) {
+   .label-input-container {
+     flex-direction: column;
+   }
+
+   .label-input-container input {
+     width: calc(100% - 10px);
+   }
+
+   .button-container {
+     margin-top: 20px;
+   }
+
+   .image-container div {
+     width: calc(100% - 20px);
+   }
+ }
+
+ #txt_cont{
+    box-sizing: 50px;
+ }
+
+
+.txt_cont{
+  margin: 5px;
+}
+
+.ann_cont{
+  margin: 10px 0;
+}
+
+.content_input{
+  margin: 20px 0;
+}
+
+input{
+  margin-left: 20px;
 }
